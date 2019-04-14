@@ -1,0 +1,54 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["Transactions", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create Transactions
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Transactions/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldCustId" class="col-sm-2 control-label">Cust</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_id", "type" => "number", "class" => "form-control", "id" => "fieldCustId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPaymentId" class="col-sm-2 control-label">Payment</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["payment_id", "type" => "number", "class" => "form-control", "id" => "fieldPaymentId"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

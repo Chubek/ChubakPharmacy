@@ -1,0 +1,63 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search Insurance_Info
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["Insurance_Info/new", "Create Insurance_Info"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Insurance_Info/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldCustInsuranceId" class="col-sm-2 control-label">Cust Of Insurance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_insurance_id", "type" => "number", "class" => "form-control", "id" => "fieldCustInsuranceId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustInsuranceName" class="col-sm-2 control-label">Cust Of Insurance Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_insurance_name", "size" => 30, "class" => "form-control", "id" => "fieldCustInsuranceName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustCourierId" class="col-sm-2 control-label">Cust Of Courier</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_courier_id", "type" => "number", "class" => "form-control", "id" => "fieldCustCourierId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustInsruanceExpires" class="col-sm-2 control-label">Cust Of Insruance Of Expires</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_insruance_expires", "type" => "date", "class" => "form-control", "id" => "fieldCustInsruanceExpires"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

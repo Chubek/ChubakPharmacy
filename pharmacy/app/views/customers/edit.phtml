@@ -1,0 +1,105 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["Customers", "Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Edit Customers
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Customers/save",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldCustFirstName" class="col-sm-2 control-label">Cust Of First Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_first_name", "size" => 30, "class" => "form-control", "id" => "fieldCustFirstName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustMiddleName" class="col-sm-2 control-label">Cust Of Middle Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_middle_name", "size" => 30, "class" => "form-control", "id" => "fieldCustMiddleName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustLastName" class="col-sm-2 control-label">Cust Of Last Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_last_name", "size" => 30, "class" => "form-control", "id" => "fieldCustLastName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustDateOfBirth" class="col-sm-2 control-label">Cust Of Date Of Of Of Birth</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_date_of_birth", "type" => "date", "class" => "form-control", "id" => "fieldCustDateOfBirth"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustGender" class="col-sm-2 control-label">Cust Of Gender</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_gender", "size" => 30, "class" => "form-control", "id" => "fieldCustGender"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustAddress" class="col-sm-2 control-label">Cust Of Address</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_address", "size" => 30, "class" => "form-control", "id" => "fieldCustAddress"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustLandline" class="col-sm-2 control-label">Cust Of Landline</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_landline", "type" => "number", "class" => "form-control", "id" => "fieldCustLandline"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustMobile" class="col-sm-2 control-label">Cust Of Mobile</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_mobile", "type" => "number", "class" => "form-control", "id" => "fieldCustMobile"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldCustInsuranceId" class="col-sm-2 control-label">Cust Of Insurance</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["cust_insurance_id", "type" => "number", "class" => "form-control", "id" => "fieldCustInsuranceId"]) ?>
+    </div>
+</div>
+
+
+<?php echo $this->tag->hiddenField("id") ?>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

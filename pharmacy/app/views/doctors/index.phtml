@@ -1,0 +1,105 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search Doctors
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["Doctors/new", "Create Doctors"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Doctors/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldDocMedicalLicId" class="col-sm-2 control-label">Doc Of Medical Of Lic</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_medical_lic_id", "type" => "number", "class" => "form-control", "id" => "fieldDocMedicalLicId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocFirstName" class="col-sm-2 control-label">Doc Of First Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_first_name", "size" => 30, "class" => "form-control", "id" => "fieldDocFirstName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocMiddleName" class="col-sm-2 control-label">Doc Of Middle Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_middle_name", "size" => 30, "class" => "form-control", "id" => "fieldDocMiddleName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocLastName" class="col-sm-2 control-label">Doc Of Last Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_last_name", "size" => 30, "class" => "form-control", "id" => "fieldDocLastName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocDateOfBirth" class="col-sm-2 control-label">Doc Of Date Of Of Of Birth</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_date_of_birth", "type" => "date", "class" => "form-control", "id" => "fieldDocDateOfBirth"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocHireDate" class="col-sm-2 control-label">Doc Of Hire Of Date</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_hire_date", "type" => "date", "class" => "form-control", "id" => "fieldDocHireDate"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocLandline" class="col-sm-2 control-label">Doc Of Landline</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_landline", "type" => "number", "class" => "form-control", "id" => "fieldDocLandline"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocMobile" class="col-sm-2 control-label">Doc Of Mobile</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_mobile", "type" => "number", "class" => "form-control", "id" => "fieldDocMobile"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocEmail" class="col-sm-2 control-label">Doc Of Email</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_email", "size" => 30, "class" => "form-control", "id" => "fieldDocEmail"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocIdPhoto" class="col-sm-2 control-label">Doc Of Id Of Photo</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_id_photo", "size" => 30, "class" => "form-control", "id" => "fieldDocIdPhoto"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

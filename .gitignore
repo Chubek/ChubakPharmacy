@@ -1,2 +1,4 @@
-/cache/
-/config/development/
+Pharmacy/cache/
+Pharmacy/config/development/
+/vendor/
+/.vscode/

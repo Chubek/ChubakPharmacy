@@ -1,0 +1,89 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["Drugs", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>
+        Create Drugs
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Drugs/create",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldDrugNdcId" class="col-sm-2 control-label">Drug Of Ndc</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_ndc_id", "type" => "number", "class" => "form-control", "id" => "fieldDrugNdcId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugCommercialName" class="col-sm-2 control-label">Drug Of Commercial Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_commercial_name", "size" => 30, "class" => "form-control", "id" => "fieldDrugCommercialName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugScientificName" class="col-sm-2 control-label">Drug Of Scientific Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_scientific_name", "size" => 30, "class" => "form-control", "id" => "fieldDrugScientificName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugCompany" class="col-sm-2 control-label">Drug Of Company</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_company", "size" => 30, "class" => "form-control", "id" => "fieldDrugCompany"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugSupplierId" class="col-sm-2 control-label">Drug Of Supplier</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_supplier_id", "type" => "number", "class" => "form-control", "id" => "fieldDrugSupplierId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugInInventory" class="col-sm-2 control-label">Drug Of In Of Inventory</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_in_inventory", "type" => "number", "class" => "form-control", "id" => "fieldDrugInInventory"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDrugInWarehouse" class="col-sm-2 control-label">Drug Of In Of Warehouse</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["drug_in_warehouse", "type" => "number", "class" => "form-control", "id" => "fieldDrugInWarehouse"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

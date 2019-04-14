@@ -1,0 +1,70 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search Doctor_Edu
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["Doctor_Edu/new", "Create Doctor_Edu"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Doctor_Edu/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldDocEduId" class="col-sm-2 control-label">Doc Of Edu</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_edu_id", "type" => "number", "class" => "form-control", "id" => "fieldDocEduId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocMedicalLicId" class="col-sm-2 control-label">Doc Of Medical Of Lic</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_medical_lic_id", "type" => "number", "class" => "form-control", "id" => "fieldDocMedicalLicId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocUniversity" class="col-sm-2 control-label">Doc Of University</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_university", "size" => 30, "class" => "form-control", "id" => "fieldDocUniversity"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocMajor" class="col-sm-2 control-label">Doc Of Major</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_major", "size" => 30, "class" => "form-control", "id" => "fieldDocMajor"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDocDegree" class="col-sm-2 control-label">Doc Of Degree</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["doc_degree", "size" => 30, "class" => "form-control", "id" => "fieldDocDegree"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>

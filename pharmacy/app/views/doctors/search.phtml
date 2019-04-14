@@ -1,0 +1,81 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<?php use Phalcon\Tag; ?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["Doctors/index", "Go Back"]); ?></li>
+            <li class="next"><?php echo $this->tag->linkTo(["Doctors/new", "Create "]); ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1>Search result</h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Doc Of Medical Of Lic</th>
+            <th>Doc Of First Of Name</th>
+            <th>Doc Of Middle Of Name</th>
+            <th>Doc Of Last Of Name</th>
+            <th>Doc Of Date Of Of Of Birth</th>
+            <th>Doc Of Hire Of Date</th>
+            <th>Doc Of Landline</th>
+            <th>Doc Of Mobile</th>
+            <th>Doc Of Email</th>
+            <th>Doc Of Id Of Photo</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $Doctor): ?>
+            <tr>
+                <td><?php echo $Doctor->doc_medical_lic_id ?></td>
+            <td><?php echo $Doctor->doc_first_name ?></td>
+            <td><?php echo $Doctor->doc_middle_name ?></td>
+            <td><?php echo $Doctor->doc_last_name ?></td>
+            <td><?php echo $Doctor->doc_date_of_birth ?></td>
+            <td><?php echo $Doctor->doc_hire_date ?></td>
+            <td><?php echo $Doctor->doc_landline ?></td>
+            <td><?php echo $Doctor->doc_mobile ?></td>
+            <td><?php echo $Doctor->doc_email ?></td>
+            <td><?php echo $Doctor->doc_id_photo ?></td>
+
+                <td><?php echo $this->tag->linkTo(["Doctors/edit/" . $Doctor->doc_medical_lic_id, "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["Doctors/delete/" . $Doctor->doc_medical_lic_id, "Delete"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+        <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+            <?php echo $page->current, "/", $page->total_pages ?>
+        </p>
+    </div>
+    <div class="col-sm-11">
+        <nav>
+            <ul class="pagination">
+                <li><?php echo $this->tag->linkTo("Doctors/search", "First") ?></li>
+                <li><?php echo $this->tag->linkTo("Doctors/search?page=" . $page->before, "Previous") ?></li>
+                <li><?php echo $this->tag->linkTo("Doctors/search?page=" . $page->next, "Next") ?></li>
+                <li><?php echo $this->tag->linkTo("Doctors/search?page=" . $page->last, "Last") ?></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="page-header">
+    <h1>
+        Search Drug_Suppliers
+    </h1>
+    <p>
+        <?php echo $this->tag->linkTo(["Drug_Suppliers/new", "Create Drug_Suppliers"]) ?>
+    </p>
+</div>
+
+<?php echo $this->getContent() ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "Drug_Suppliers/search",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldSupplierId" class="col-sm-2 control-label">Supplier</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["supplier_id", "type" => "number", "class" => "form-control", "id" => "fieldSupplierId"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSupplierName" class="col-sm-2 control-label">Supplier Of Name</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["supplier_name", "size" => 30, "class" => "form-control", "id" => "fieldSupplierName"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSupplierAddress" class="col-sm-2 control-label">Supplier Of Address</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["supplier_address", "size" => 30, "class" => "form-control", "id" => "fieldSupplierAddress"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSupplierLandline" class="col-sm-2 control-label">Supplier Of Landline</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["supplier_landline", "type" => "number", "class" => "form-control", "id" => "fieldSupplierLandline"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldSupplierMobile" class="col-sm-2 control-label">Supplier Of Mobile</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["supplier_mobile", "type" => "number", "class" => "form-control", "id" => "fieldSupplierMobile"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["Search", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
